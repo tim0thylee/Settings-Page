@@ -1,0 +1,25 @@
+.dropdown {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.dropdown h1 {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #D3DCEA;
+    text-indent: 5px;
+}
+
+.dropdown select {
+    flex-basis: 60%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+}
+
+.line-border{
+    flex-basis: 60%;
+    margin-left: 4px;
+    border-top: 1px solid  #D3DCEA;
+}

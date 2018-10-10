@@ -1,0 +1,66 @@
+.color-check {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+}
+
+.color-checkbox {
+    position: relative;
+    cursor: pointer;
+}
+
+.color-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.color-checkmark {
+   position: absolute;
+   top:0;
+   height: 40px;
+   width: 40px;
+   border-radius: 50%; 
+}
+
+.color-checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.color-checkbox input:checked ~ .color-checkmark:after {
+    display: block;
+}
+
+.color-checkbox .color-checkmark:after {
+    left: 16px;
+    top: 11px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.blue-background {
+   background-color: #2785FF;
+}
+.orange-background {
+    background-color: #FFBB32;
+ }
+ .green-background {
+    background-color: #D3DA2F;
+ }
+ .teal-background {
+    background-color: #82C8E0;
+ }
+ .grey-background {
+    background-color: #808283 ;
+ }
+
+ 
+
