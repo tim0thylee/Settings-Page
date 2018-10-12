@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Dropdown from "../Dropdown/Dropdown";
 import Colorcheck from "../Colorcheck/Colorcheck";
 import "./Container.css";
-import Fontsizer from "../Fontsizer/Fontsizer";
+// import Fontsizer from "../Fontsizer/Fontsizer";
 
 class Container extends Component {
 
@@ -15,17 +15,19 @@ class Container extends Component {
             chosenStyle: "Normal",
             chosenStyleClass: "normalClass",
             chosenColor: "blue",
-            chosenColorClass: "blueColorClass"
+            chosenColorClass: "blueColorClass",
+            toggleSwitchState: false
         }
 
         this.changeFont = this.changeFont.bind(this);
         this.changeStyle= this.changeStyle.bind(this);
         this.changeColor= this.changeColor.bind(this);
+        this.toggleSwitch = this.toggleSwitch.bind(this);
     }
 
     changeFont = (event) => {
         let chosen = ""
-
+        
         if(event.target.value === "Roboto"){
             chosen = "robotoFont"
         } else if (event.target.value === "K2D"){
@@ -70,19 +72,29 @@ class Container extends Component {
             chosen = "blueColorClass"
         } else if (event.target.value === "green"){
             chosen = "greenColorClass"
-        } else if (event.target.value === "Bold") {
-            chosen = "boldStyle"
-        } else if (event.target.value === "Small-Caps") {
-            chosen = "smallCapsStyle"
+        } else if (event.target.value === "orange") {
+            chosen = "orangeColorClass"
+        } else if (event.target.value === "teal") {
+            chosen = "tealColorClass"
         } else {
-            chosen ="blueColorClass"
+            chosen ="greyColorClass"
         }
-        console.log(event.target.value)
+        
         this.setState({
             chosenColor: event.target.value,
             chosenColorClass: chosen
         })
 
+    }
+
+    toggleSwitch = (event) => {
+        this.setState({
+            toggleSwitchState: event.target.checked
+        })
+        
+        if(this.state.toggleSwitchState){
+            
+        }
     }
 
     render () {
@@ -98,7 +110,7 @@ class Container extends Component {
                         </div>
                     </div>
                     <label className="toggle-switch">
-                        <input type="checkbox" />
+                        <input type="checkbox" checked={this.state.toggleSwitchState} onChange={this.toggleSwitch}/>
                         <span className="slider"></span>
                     </label>
                 </div>
@@ -122,7 +134,7 @@ class Container extends Component {
                     <Colorcheck 
                         onChangeEvent={this.changeColor}
                     />
-                    <Fontsizer />
+                    {/* <Fontsizer /> */}
                 </div>
             </div>
         )

@@ -81,9 +81,9 @@ input:checked + .slider:before {
     flex-direction: column;
     align-items: center;
 }
-.font-div h1{
+.font-shown{
     font-size: 10em;
-    font-weight: lighter;
+    font-weight: normal;
 }
 
 .font-settings {
@@ -123,10 +123,30 @@ input:checked + .slider:before {
     font-style: italic;
 }
 
+.boldStyle {
+    font-weight: bold;
+}
+
+.smallCapsStyle{
+    font-variant: small-caps;
+}
+
 .blueColorClass {
     background-color: #2785FF;
 }
 
 .greenColorClass {
     background-color: #D3DA2F
+}
+
+.orangeColorClass {
+    background-color: #FFBB32;
+}
+
+.tealColorClass {
+    background-color: #82C8E0;
+}
+
+.greyColorClass {
+    background-color: #808283;
 }
